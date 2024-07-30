@@ -7,11 +7,9 @@ const userSchema = new Schema({
 
      firstName: {
          type: String,
-         trim: true,
      },
      lastName: {
          type: String,
-         trim: true,
      },
     comments: [
         {
