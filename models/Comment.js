@@ -22,7 +22,7 @@ const commentSchema = new Schema({
         rating: {
             type: String,
             trim: true,
-        }
+        },
         title: {
             type: String,
             trim: true,
