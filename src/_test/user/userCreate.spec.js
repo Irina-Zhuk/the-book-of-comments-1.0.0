@@ -3,12 +3,12 @@ const {userCreateQ} = require('./queries');
 const {user} = require('./data');
 const gqlRequest = require('../gqlRequest');
 
+let respData = null;
+let postData = null
 
-let respData = null
-let postData = null;
 describe('USER CREATE', () => {
     describe('USER CREATE - POSITIVE TESTS', () => {
-        it('Should Create User with All Fields', () => {
+        it('Should Create User with All Fields', (done) => {
            postData = {
                query: userCreateQ,
                variables: user
@@ -16,16 +16,16 @@ describe('USER CREATE', () => {
            gqlRequest(postData)
             .expect(200)
             .end((err, res) => {
-               if (err) return done (err)
+               if (err) return done(err)
                respData = res.body
                console.log(respData)
-               // expect(respData).eql()
+               // expect(respData).eq()
                done()
-
             })
-
-
         })
+    })
+})
+
 //         it('Should Create User with All Fields', () => {
 //
 //         })
@@ -43,5 +43,3 @@ describe('USER CREATE', () => {
 //         it('Should not Create User... ', () => {
 //
 //         })
-  })
-})

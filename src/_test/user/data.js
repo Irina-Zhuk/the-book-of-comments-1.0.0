@@ -4,4 +4,4 @@ const user = {
         lastName: 'testLastName'
     }
 }
-module.exports = {user}
+module.exports = { user }
